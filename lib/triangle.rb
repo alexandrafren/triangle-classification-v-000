@@ -18,4 +18,10 @@ class Triangle
     end
   end
 
+  class TriangleError < StandardError
+    def message
+      puts "Your sides are unacceptable lengths."
+    end
+  end
+
 end
