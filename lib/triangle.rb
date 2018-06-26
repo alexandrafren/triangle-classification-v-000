@@ -8,14 +8,10 @@ class Triangle
   end
 
   def kind
-    if @side_1.class != Fixnum || @side_2.class != Fixnum || @side_3.class != Fixnum
-      begin
-        raise TriangleError
-      rescue TriangleError => error
-        error.message
-      end
-    elsif @side_1 == @side_2 && @side_2 == @side_3
+    if @side_1 == @side_2 && @side_2 == @side_3
       :equilateral
+    elsif @side_1 == @side_2 || @side_1 == @side_3 || @side_2 == @side_3
+      :isosceles
     else
        nil
     end
