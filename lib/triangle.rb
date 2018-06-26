@@ -27,8 +27,11 @@ class Triangle
   #    rescue TriangleError => error
   #      puts error.message
 #      end
-   if @side_1 == @side_2 && @side_2 == @side_3
-     @type = :equilateral
+   if @side_1 == @side_2
+     if @side_2 == @side_3
+       @type = :equilateral
+     else
+       @type = :isosceles
     elsif @side_1 == @side_2 || @side_2 == @side_3 || @side_1 == @side_3
       @type = :isosceles
     else
