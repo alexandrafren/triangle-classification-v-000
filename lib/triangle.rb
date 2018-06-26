@@ -9,7 +9,19 @@ class Triangle
   end
 
   def kind
-    if @side_1 == @side_2 == @side_3
+    if @side_1 == 0 || @side_2 == 0 || @side_3 == 0
+      begin
+        raise TraingleError
+      rescue TriangleError => error
+        puts error.message
+      end
+    elsif @side_1 + @side_2 < @side_3 || @side_1 + @side_3 < @side_2 || @side_2 + @side_3 < @side_1
+      begin
+        raise TriangleError
+      rescue TriangleError => error
+        puts error.message
+      end
+    elsif @side_1 == @side_2 == @side_3
       @type = :equilateral
     elsif @side_1 == @side_2 || @side_2 == @side_3 || @side_1 == @side_3
       @type = :isosceles
@@ -20,7 +32,7 @@ class Triangle
 
   class TriangleError < StandardError
     def message
-      puts "Your sides are unacceptable lengths."
+      "Your sides are unacceptable lengths."
     end
   end
 
