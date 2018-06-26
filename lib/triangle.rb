@@ -34,7 +34,6 @@ class Triangle
     else
       @type = :scalene
     end
-    @type
   end
 
   class TriangleError < StandardError
