@@ -9,7 +9,7 @@ class Triangle
   end
 
   def kind
-    if @side_1.class != fixnum || @side_2.class != fixnum || @side_3.class != fixnum
+    if @side_1.class != Fixnum || @side_2.class != Fixnum || @side_3.class != Fixnum
       begin TriangleError
       rescue TriangleError => error
         puts error.message
